@@ -8,8 +8,12 @@
 <div>
     <form action="/put" method="Post">
         <h2>Положить деньги на счёт</h2>
-        <p><input name="score" placeholder="Введите номер счета" required></p>
-        <p><input name="money" placeholder="Введите сумму или 0" required></p>
+        <p><label>
+            <input name="score" placeholder="Введите номер счета" required>
+        </label></p>
+        <p><label>
+            <input name="money" placeholder="Введите сумму или 0" required>
+        </label></p>
         <p>
             <button type="submit" name="button" value="checkMoney">Проверить баланс</button>
             <button type="submit" name="button" value="putMoney">Пополнить баланс</button>

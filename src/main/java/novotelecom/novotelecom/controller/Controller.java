@@ -2,7 +2,6 @@ package novotelecom.novotelecom.controller;
 
 import novotelecom.novotelecom.Repository.ScoreRepository;
 import novotelecom.novotelecom.model.Score;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Iterator;
@@ -10,8 +9,11 @@ import java.util.List;
 
 @RestController
 public class Controller {
-    @Autowired
-    private ScoreRepository scoreRepository;
+    private final ScoreRepository scoreRepository;
+
+    public Controller(ScoreRepository scoreRepository) {
+        this.scoreRepository = scoreRepository;
+    }
 
     @RequestMapping(value = "/status", method = RequestMethod.POST)
     public String statusScore(@RequestParam int score, String button) {
